@@ -1,0 +1,50 @@
+.navBar {
+    /*選擇class為navBar元素為大括號內的樣子*/
+    list-style-type: none;
+    text-align: center;
+    background-color: Tan;
+}
+
+.navBar li {
+    /*子孫選擇器> 選擇class等於navBar為li的元素*/
+    display: inline-block;
+    padding: 20px;
+}
+
+/* anv按鈕的樣式設計 */
+.fancy-btn {
+    position: relative;
+    background-color: #8b4000;
+    color: white;
+    padding: 20px 30px;
+    /* ⬅️ 整體按鈕變大 */
+    border: none;
+    border-radius: 12px;
+    font-size: 60px;
+    /* ⬅️ 文字變大 */
+    font-weight: bold;
+    /* ⬅️ 文字變粗一點更清楚 */
+    text-decoration: none;
+    /*給 <a> 用的，讓超連結沒底線*/
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    display: inline-block;
+    /*讓 <a> 長得像按鈕一樣*/
+}
+
+.fancy-btn:hover {
+    background-color: #a94400;
+    transform: scale(1.05);
+}
+
+/* 香菇互動式按鈕的設定 */
+#runaway-btn {
+    width: 150px;
+    height: 127px;
+    font-size: 60px;
+    white-space: nowrap;
+    /* 避免文字換行 */
+    font-weight: bold;
+    box-sizing: border-box;
+}

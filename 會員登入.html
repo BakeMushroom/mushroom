@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>會員登入</title>
+    <link rel="icon" href="./img/圖標.png" type="image/png">
+    <style>
+        body {
+            background-color: #d2b48c;
+            background-image: url(./img/會員登入背景圖.png);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .login-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            max-width: 90%;
+            margin: 0 auto;
+        }
+        h2 {
+            color: #f0fff0;
+            font-size: clamp(9rem, 16vw, 8rem);
+        }
+        .form-group {
+            display: flex;
+            justify-content: space-between;
+            width: 200%;
+            max-width: 400px;
+        }
+        .form-group label {
+            flex: 1;
+            font-size: 2.5rem;         /* ✅ 增加 label 字體大小 */
+            color: #f0fff0;
+        }
+        .form-group input {
+            flex: 2;
+            padding: 1rem;              /* ✅ 增加內距，讓輸入框更高更好點 */
+            font-size: 2rem;          /* ✅ 增加文字大小 */
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .btn {
+            width: 100%;
+            max-width: 200px;
+            padding: 1.55rem;
+            font-size: 2rem;
+            background-color: #f0fff0;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        @media (max-width: 480px) {
+        .form-group input,
+        .form-group label {
+            font-size: 1.4rem;
+            padding: 1.2rem;
+        }
+}
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>菇園入口</h2>
+        <div class="form-group">
+            <label>帳號 :</label>
+            <input type="text" placeholder="欸?">
+        </div>
+        <div class="form-group">
+            <label>密碼 :</label>
+            <input type="password" placeholder="咦?">
+        </div>
+        <button class="btn">登入</button>
+    </div>
+</body>
+</html>

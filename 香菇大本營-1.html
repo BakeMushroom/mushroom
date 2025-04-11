@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <title>香菇大本營</title>
+    <link rel="icon" href="./img/香菇圖標.png" type="image/png">
+    <style>
+        .hya {
+
+            background: transparent;
+            /*設定背景為透明 */
+            padding: 0;
+            /* 移除內距（避免產生框） */
+            color: beige;
+            text-shadow: 10px 10px 6px rgba(0, 0, 0, 0.5);
+            /*字體陰影*/
+            font-size: 13rem;
+            /* 字體大小 */
+            font-weight: bold;
+            /* 字體加粗 */
+            margin: 0;
+        
+
+        }
+
+        .haa {
+            text-shadow: 5px 5px 6px #808000;
+        }
+
+        h1 {
+            color: SaddleBrown;
+            font-size: 70px;
+        }
+
+
+        body {
+            font-family: sans-serif;
+            background: #fff;
+            padding: 0;
+            margin: 0;
+        }
+
+        header {
+            background-color: #dd8a37;
+            padding: 20px;
+            color: #7b3e00;
+            font-size: 48px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #d2b48c;
+            padding: 30px 0;
+        }
+
+        .navBar {
+            display: flex;
+            flex-wrap: wrap;
+            /*讓它在桌機是橫排、手機變直排*/
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .navBar button {
+            background-color: #8b4000;
+            color: white;
+            border: none;
+            border-radius: 12px;
+            padding: 12px 20px;
+            font-size: 20px;
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: all 0.8s ease;
+            /* 平滑過渡 */
+            /*會跑的按鈕移動速度*/
+            position: relative;
+            /* 一開始要一起排好位置 */
+
+        }
+
+
+
+        .navBar button:hover {
+            background-color: #a94400;
+            transform: scale(1.05);
+        }
+
+        /* 響應式樣式↓ */
+        @media (max-width: 600px) {
+            .navBar {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            /* .navBar button, */
+            /* 設定讓按鈕在不同裝置上不會變形↓ */
+            /* .navBar a.fancy-btn {
+                flex-shrink: 0; */
+            /* 不讓按鈕被壓縮 */
+            /* width: auto; */
+            /* 保持原本寬度 */
+            /* min-width: 140px; */
+            /* 可以加個底線寬度保護 */
+            /* max-width: 80%; */
+            /* 避免太大 */
+            /* box-sizing: border-box; */
+            /* 確保 padding 不影響寬度 */
+            /* } */
+
+            /* .fancy-btn {
+                font-size: 20px;
+            } */
+
+            header h1 {
+                font-size: 32px;
+            }
+        }
+
+        .hero-section {
+            /* <nav>導覽頁設定 */
+            background-image: url("./img/mm.png");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+
+            height: 300px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 48px;
+            font-weight: bold;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-section img {
+            pointer-events: none;
+            /* ✅ 讓圖片不攔截點擊事件 */
+        }
+
+
+        /* ↓會員登入的按鈕樣式設定 */
+        .hero-section {
+            /* ↑整個header樣式設定 */
+            position: relative;
+            text-align: center;
+            /* 內部文字置中 */
+            padding: 15px;
+            /* 文字內距 */
+            background-color: #d2b48c;
+
+        }
+
+
+        .login-btn {
+            /* 按鈕的樣式設定 */
+            position: fixed;
+            /* 固定在畫面而不是 header 裡 */
+            top: 20px;
+            right: 20px;
+            padding: 8px 16px;
+            font-size: 1rem;
+            background-color: #f9f2c5;
+            color: black;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+            transition: background-color 0.3s ease;
+            z-index: 999;
+            text-decoration: none;
+            /* 確保在最上層 */
+        }
+
+        /* 購物車按鈕設定 */
+        .icon-abc {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            font-size: 2rem;
+            background-color: #ffe4e1;
+            /*滑鼠未點擊時顏色*/
+            color: white;
+            border: none;
+            text-align: center;
+            line-height: 50px;
+            text-decoration: none;
+            /* 去除超連結底線 */
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            transition: transform 0.2s ease, background-color 0.3s ease;
+            z-index: 999;
+            /*永遠在最上層*/
+        }
+
+        .icon-abc:hover {
+            transform: scale(1.1);
+            background-color: #fa8072;
+        }
+
+        /*滑鼠點擊時顏色改變*/
+
+
+
+        .login-abc:hover {
+            background-color: #e0d899;
+        }
+
+        /* 最新消息設定 */
+        h2 {
+            font-size: 4rem;
+        }
+
+        .main-content {
+            color: #556b2f;
+            background-color: #d2b48c;
+            background-image: url('./img/cbcb.png');
+            background-size: contain;
+            text-align: center;
+            padding: 50px;
+        
+        }
+
+        /* 輪播圖設定 */
+        .carousel {
+            position: relative;
+            width: 60%;
+            max-width: 500px;
+            margin: 40px auto;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        
+        }
+
+        .carousel-img {
+            display: none;
+            width: 100%;
+            height: 700px;
+            border-radius: 15px;
+            /* object-fit: cover;  */
+            /* 保持圖片不變形填滿容器 */
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .carousel-img.active {
+            display: block;
+        }
+
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(255, 255, 255, 0.7);
+            border: none;
+            font-size: 2rem;
+            padding: 8px 16px;
+            cursor: pointer;
+            border-radius: 50%;
+            z-index: 2;
+            transition: background-color 0.3s ease;
+        }
+
+        .carousel-btn:hover {
+            background-color: rgba(255, 255, 255, 1);
+        }
+
+        .carousel-btn.prev {
+            left: 10px;
+        }
+
+        .carousel-btn.next {
+            right: 10px;
+        }
+
+        /* 頁尾樣式設定 */
+        .site-footer {
+            background-color: #d2b48c;
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+            font-size: 1rem;
+            background-image: url('./img/香菇圖標.png');
+            background-size: contain;
+        }
+
+        .footer-content p {
+            margin: 5px 0;
+            color: #ffe4c4;
+            font-size: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    </style>
+    <link rel="stylesheet" href="./練習css .css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+
+    <body>
+
+        <header class="hero-section">
+            <h1 class="hya">香菇園區</h1>
+
+            <button class="login-btn">菇菇會員</button><!--會員按鈕設置-->
+
+            <!-- 使用class="login-btn"單獨針對這個按鈕設定樣式，為了不影響其他button -->
+
+        </header>
+        <a href="./shoppingcart.html" target="_blank" class="icon-abc" title="再不買就長草的購物車"><!-- 購物車按鈕網頁設置 -->
+            🛒
+        </a>
+
+        <nav>
+            <!-- 導覽按鈕 -->
+            <ul class="navBar">
+                <li>
+                    <button id="runaway-btn" class="fancy-btn">香菇</button>
+                </li>
+                <li>
+                    <a href="https://www.edh.tw/article/36333" class="fancy-btn">菇類功效介紹</a>
+                </li>
+                <li>
+                    <a href="#" id="sweet-link" class="fancy-btn">賣場</a>
+                    <!-- 接 SweetAlert2 製作維修中的賣場提示-->
+                </li>
+
+            </ul>
+
+        </nav>
+        <main class="main-content">
+            <section>
+                <h2 class="haa">最新消息</h2>
+            </section>
+            <div class="carousel">
+                <!-- 外框容器 -->
+                <button class="carousel-btn prev">&#10094;</button> <!--左邊切換按鈕-->
+
+                <img src="./img/輪播圖/周年慶活動.png" class="carousel-img active">
+                <img src="./img/輪播圖/吃香菇好處.png" class="carousel-img">
+                <img src="./img/輪播圖/牛肝菌調漲公告.png" class="carousel-img">
+                <img src="./img/輪播圖/香菇獎.png" class="carousel-img">
+                <img src="./img/輪播圖/流浪動物獎狀.png" class="carousel-img">
+                <img src="./img/輪播圖/消費買額滿運.png" class="carousel-img">
+
+                <button class="carousel-btn next">&#10095;</button><!--右邊切換按鈕-->
+            </div>
+        </main>
+        <footer class="site-footer">
+            <div class="footer-content">
+                <p>聯絡信箱 : mushroom@xxoo.com</p>
+                <p>服務電話 : 0912-XXX-345</p>
+                <p>© 2025 香菇．版權所有 🍄</p>
+            </div>
+        </footer>
+
+        <script>
+            const btn = document.getElementById("runaway-btn");
+
+            btn.addEventListener("mouseenter", () => {
+                // 切換成可自由移動
+                btn.style.position = "absolute";
+
+                const maxX = window.innerWidth - btn.offsetWidth;
+                const maxY = window.innerHeight - btn.offsetHeight;
+
+                const randomX = Math.random() * maxX;
+                const randomY = Math.random() * maxY;
+
+                btn.style.left = randomX + "px";
+                btn.style.top = randomY + "px";
+            });
+
+            btn.addEventListener("click", () => {
+                alert("🍄我跑那麼快!!你居然抓到我了!！🍄");
+            });
+            // 客製化的跳窗格式(引入 SweetAlert2)
+            document.querySelector('.login-btn').addEventListener('click', () => {
+                Swal.fire({
+                    title: '🪄 請確認權限！🍄',//主標題文字
+                    text: '騙你的啦嘿嘿，快來登入🎉',//內文說明文
+                    icon: 'warning',//提示圖示
+                    confirmButtonText: '立即前往',//按鈕文字
+                    confirmButtonColor: '#8b4000'//按鈕顏色
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        window.location.href = "會員登入.html";
+                    }
+                });
+            });
+
+
+
+            // 輪播圖設定 
+            let index = 0;
+            const images = document.querySelectorAll(".carousel-img");
+
+            function showNextImage() {
+                images[index].classList.remove("active");
+                index = (index + 1) % images.length;
+                images[index].classList.add("active");
+            }
+
+            setInterval(showNextImage, 2000); // 每 3 秒切換
+
+            // 賣場按鈕設置SweetAlert2套件，設置在<a>標籤裡要阻止跳轉
+            document.getElementById("sweet-link").addEventListener("click", function (event) {
+                event.preventDefault(); // ⛔ 阻止 a 標籤跳轉
+
+                Swal.fire({
+                    icon: "info",
+                    title: "✨ 壞掉了 ✨",
+                    text: "⚙️ 賣場功能維護中 🕸️",
+                    confirmButtonText: "繼續探索"
+                });
+            });
+
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <!--↑ 引入 SweetAlert2（放在 <body> 最底下） -->
+    </body>
+
+</html>
