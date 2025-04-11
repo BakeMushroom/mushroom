@@ -20,7 +20,7 @@
             font-weight: bold;
             /* 字體加粗 */
             margin: 0;
-        
+
 
         }
 
@@ -162,17 +162,23 @@
             top: 20px;
             right: 20px;
             padding: 8px 16px;
-            font-size: 1rem;
-            background-color: #f9f2c5;
+            font-size: 10rem;
+            /* background-color: #f9f2c5; */
+            background: none;
             color: black;
             border: none;
             border-radius: 6px;
             cursor: pointer;
-            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+            box-shadow: none;
             transition: background-color 0.3s ease;
             z-index: 999;
             text-decoration: none;
             /* 確保在最上層 */
+        }
+
+        .login-btn:hover {
+            transform: scale(1.1);
+            /* 滑過時放大 */
         }
 
         /* 購物車按鈕設定 */
@@ -180,28 +186,31 @@
             position: fixed;
             bottom: 20px;
             right: 20px;
-            width: 60px;
-            height: 60px;
-            font-size: 2rem;
-            background-color: #ffe4e1;
-            /*滑鼠未點擊時顏色*/
-            color: white;
+
+            background: none;
+            /* ✅ 移除背景 */
             border: none;
-            text-align: center;
-            line-height: 50px;
+            /* ✅ 移除邊框 */
+            box-shadow: none;
+            /* ✅ 移除陰影 */
+            border-radius: 0;
+            /* ✅ 不需要圓角 */
+
+            font-size: 7rem;
+            /* ✅ 響應式大小（根據 html 字體大小） */
+            color: inherit;
+            /* 使用預設文字顏色 */
+            cursor: pointer;
+            z-index: 999;
+            padding: 0;
+            line-height: 1;
             text-decoration: none;
             /* 去除超連結底線 */
-            border-radius: 50%;
-            cursor: pointer;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-            transition: transform 0.2s ease, background-color 0.3s ease;
-            z-index: 999;
-            /*永遠在最上層*/
+            transition: transform 0.2s ease;
         }
 
         .icon-abc:hover {
-            transform: scale(1.1);
-            background-color: #fa8072;
+            transform: scale(1.5);
         }
 
         /*滑鼠點擊時顏色改變*/
@@ -224,7 +233,7 @@
             background-size: contain;
             text-align: center;
             padding: 50px;
-        
+
         }
 
         /* 輪播圖設定 */
@@ -236,7 +245,7 @@
             overflow: hidden;
             border-radius: 15px;
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-        
+
         }
 
         .carousel-img {
@@ -309,7 +318,7 @@
         <header class="hero-section">
             <h1 class="hya">香菇園區</h1>
 
-            <button class="login-btn">菇菇會員</button><!--會員按鈕設置-->
+            <button class="login-btn">👑</button><!--會員按鈕設置-->
 
             <!-- 使用class="login-btn"單獨針對這個按鈕設定樣式，為了不影響其他button -->
 
