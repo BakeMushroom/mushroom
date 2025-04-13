@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>香菇園購物車</title>
+    <link rel="icon" href="img/購物車圖標.png" type="image/png">
+    <link rel="stylesheet" href="shoppingcart.css" >
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    <header class="store-header">
+        <div class="bbb">
+            <img src="img/mushroom-1.png" class="logo">
+            <h1 class="h1">購物車</h1>
+        </div>
+        
+    </header>
+
+    <main class="cart-aaaaa">
+        <table>
+            <thead>
+                <tr>
+                    <th>商品</th>
+                    <th>價格</th>
+                    <th>數量</th>
+                    <th>小計</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody id="cart-bbbbb"></tbody>
+        </table>
+        <div class="cart-ccccc">
+            <strong>總金額:</strong><span id="total-price">0</span>元
+        </div>
+        <button class="checkout-abc">前往結帳</button>
+        <button type="button" onclick="resetCart()">清空購物車🪄</button>
+        <button onclick="location.href='香菇賣場.html'">返回賣場</button>
+    </main>
+
+    <script src="shoppingcart.js"></script>
+</body>
+</html>

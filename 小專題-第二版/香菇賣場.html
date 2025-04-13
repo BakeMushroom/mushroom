@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>香菇賣場</title>
+    <link rel="stylesheet" href="./香菇賣場.css">
+    <link rel="icon" href="./img/shop.png">
+</head>
+
+<body>
+    <header class="store-header">
+        <div class="bbb">
+            <img src="img/mushroom-1.png" class="logo">
+            <h1 class="h1">賣場</h1>
+        </div>
+        <nav>
+            <a href="mushrooooooom-1.html" class="aaa">回首頁</a>
+            <a href="shoppingcart.html" class="cart-wrapper" style="position: relative;">
+                <img src="./img/shopping-cart.png" alt="購物車" class="cart-icon" style="width: 1.6rem; height: auto;">
+                <span class="cart-badge">0</span>
+                <!-- ✅ 數量徽章 -->
+            </a>
+        </nav>
+    </header>
+
+    <div class="filter-bar">
+        <button>全部商品</button>
+        <button>乾燥菇</button>
+        <button>餅乾類</button>
+        <button>養生飲系列</button>
+        <button>其他</button>
+    </div>
+
+    <section class="product-list">
+        <div class="product-card">
+            <img src="img/台灣香菇乾-2.png" alt="香菇乾">
+            <h3>台灣香菇乾 600g</h3>
+            <p>NT$850</p>
+            <button>加入購物車</button>
+        </div>
+
+        <div class="product-card">
+            <img src="img/椒鹽味香菇餅乾.jpg" alt="香菇餅乾">
+            <h3>綜合菇餅乾（椒鹽）100g</h3>
+            <p>NT$85</p>
+            <button>加入購物車</button>
+        </div>
+
+        <div class="product-card">
+            <img src="img/金針養生湯.png" alt="養生飲系列">
+            <h3>金針養生湯包</h3>
+            <p>NT$120</p>
+            <button>加入購物車</button>
+        </div>
+
+        <div class="product-card">
+            <img src="img/桂圓紅棗銀耳飲.png" alt="養生飲系列">
+            <h3>桂圓紅棗銀耳飲330ml 單入</h3>
+            <p>NT$120</p>
+            <button>加入購物車</button>
+        </div>
+
+        <div class="product-card">
+            <img src="img/桂圓紅棗銀耳飲.png" alt="養生飲系列">
+            <h3>桂圓紅棗銀耳飲330ml 六入禮盒裝</h3>
+            <p>NT$650</p>
+            <button>加入購物車</button>
+        </div>
+
+        <div class="product-card">
+            <img src="img/香菇牛肉xo醬.png" alt="其他">
+            <h3>香菇牛肉XO醬500ml 單入</h3>
+            <p>NT$270</p>
+            <button>加入購物車</button>
+        </div>
+
+        <div class="product-card">
+            <img src="img/香菇牛肉xo醬.png" alt="其他">
+            <h3>香菇牛肉XO醬500ml 六入禮盒裝</h3>
+            <p>NT$1500</p>
+            <button>加入購物車</button>
+        </div>
+
+    </section>
+
+    <footer class="site-footer">
+        © 2025 香菇園區．歡迎回菇 🍄
+    </footer>
+
+    <script>
+        // ✅ 購物車徽章更新函式
+        function updateCartBadge() {
+            const badge = document.querySelector('.cart-badge');
+            if (!badge) return;
+    
+            const cart = JSON.parse(localStorage.getItem("cart")) || [];
+            const totalCount = cart.reduce((acc, item) => acc + (item.quantity || 1), 0);
+            badge.textContent = totalCount;
+            badge.style.display = totalCount > 0 ? 'inline-block' : 'none';
+        }
+    
+        // ✅ 頁面載入後綁定一次
+        document.addEventListener("DOMContentLoaded", () => {
+            updateCartBadge(); // 初始化徽章
+    
+            document.querySelectorAll(".product-card").forEach(card => {
+                const name = card.querySelector("h3").textContent;
+                const price = parseInt(card.querySelector("p").textContent.replace("NT$", ""));
+                const button = card.querySelector("button");
+    
+                button.addEventListener("click", () => {
+                    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+                    const existing = cart.find(item => item.name === name);
+                    if (existing) {
+                        existing.quantity += 1;
+                    } else {
+                        cart.push({ name, price, quantity: 1 });
+                    }
+                    localStorage.setItem("cart", JSON.stringify(cart));
+                    updateCartBadge();
+                });
+            });
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,288 @@
+html {
+    font-size: 16px;
+}
+
+* {
+    /* 快速套用全站響應式 */
+    box-sizing: border-box;
+    max-width: 100%;
+    word-wrap: break-word;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    /* 確保不會被其他元素蓋住 */
+    background-color: #d2b48c;
+    /* ⚠️要設定背景，否則滾動會透出底圖 */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    /* 可選，增加浮起感 */
+}
+
+.aoa {
+    display: flex;
+    /* 讓h1跟nav並排 */
+    justify-content: space-between;
+    /* 左右兩邊對齊 */
+    align-items: center;
+    /* 垂直置中對齊 */
+    background-color: Tan;
+}
+
+.bbb {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo {
+    width: 10rem;
+    height: auto;
+}
+
+/* .h1 {
+    margin: 0;
+    font-size: 3rem;
+} */
+
+nav {
+
+    position: relative;
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+/* 香菇按鈕設定 */
+.runaway-btn {
+    position: relative;
+    transition: transform 0.5s ease;
+    z-index: 10;
+}
+
+.aaa {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
+    /* 主按鈕字體 */
+    /* ✅ 響應式字體 */
+    font-weight: bold;
+    color: Maroon;
+    border: none;
+    background: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-decoration: none;
+    white-space: nowrap;
+    /* ✅ 避免斷行 */
+}
+
+.aaa:hover {
+    background-color: Ivory;
+    /* 滑鼠移上去時變色 */
+    transform: scale(1.05);
+    /* 微微放大 */
+}
+
+.ddd {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
+    /* 主按鈕字體 */
+    font-weight: bold;
+    color: Maroon;
+    border: none;
+    background: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-decoration: none;
+}
+
+.ddd:hover {
+    transform: scale(1.05);
+
+}
+
+/* 輪播圖樣式 */
+/* 最外層區塊填滿整個螢幕寬度 */
+.carousel {
+    width: 100%;
+    background-color: #eee;
+    /* 可有可無，避免圖片空白時突兀 */
+}
+
+.carousel-wrapper {
+    width: 100%;
+    overflow: hidden;
+    aspect-ratio: 16 / 6;
+    /* ✅ 推薦使用 aspect-ratio 自動縮放 */
+    position: relative;
+}
+
+.carousel-img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.carousel-img.active {
+    opacity: 1;
+    z-index: 1;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.carousel-btn.prev {
+    left: 20px;
+}
+
+.carousel-btn.next {
+    right: 20px;
+}
+
+/* 門市、滿額、刷卡介面介紹樣式設定 */
+.features {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 3rem 2rem;
+    background-color: #f9f9f9;
+    flex-wrap: wrap;
+}
+
+.feature {
+    flex: 1 1 250px;
+    max-width: 300px;
+    text-align: center;
+    padding: 1rem;
+}
+
+.feature .icon {
+    width: 50px;
+    margin-bottom: 1rem;
+}
+
+.feature h3 {
+    font-size: clamp(1rem, 2vw, 1.3rem);
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.feature p {
+    font-size: clamp(0.9rem, 1.5vw, 1rem);
+    color: #666;
+}
+
+/* 卡片式樣式設計 */
+.card-section {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 2rem;
+    background-color: #f8f8f8;
+}
+
+.card {
+    background-color: #f5f5f5;
+    border-radius: 16px;
+    overflow: hidden;
+    width: clamp(250px, 30%, 300px);
+    /* 根據容器調整寬度 */
+    padding: 1rem;
+    text-align: left;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+}
+
+.card h3 {
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    /* 根據螢幕縮放 */
+    color: #333;
+}
+
+.card p {
+    font-size: clamp(0.9rem, 1.5vw, 1.2rem);
+    color: #555;
+    margin-bottom: 1rem;
+}
+
+.card-link {
+    color: #d9534f;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.card-link:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+    html {
+        font-size: 14px;
+        /* 手機再縮小 */
+    }
+
+    .card {
+        width: 95%;
+        padding: 1rem;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logo {
+        width: 6rem;
+    }
+}
+
+/* 頁尾樣式設定 */
+.site-footer {
+    background-color: #f8f8f8;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    font-size: 1rem;
+    background-image: url('./img/香菇圖標.png'), url('./img/香菇圖標.png');
+    /*使用兩張相同圖片*/
+    background-size: contain;
+    background-repeat: no-repeat;
+    /* ✅ 不重複 */
+    background-position: left bottom, right bottom;
+    /* ✅ 固定在底部左下 + 右下  */
+}
+
+.footer-content p {
+    margin: 1rem 0;
+    color: Black;
+    font-size: clamp(1rem, 2vw, 1.5rem);
+}

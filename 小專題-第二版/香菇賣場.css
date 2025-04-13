@@ -1,0 +1,219 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Noto Sans TC', sans-serif;
+}
+
+.bbb {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+body {
+    margin: 0;
+    background-color: #fffaf2;
+    color: #333;
+}
+
+
+header.store-header {
+    background-color: #d2b48c;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    display: block;
+    max-height: 80px;
+    height: auto;
+  }
+
+.h1 {
+    font-size: 3rem;
+  color: #8b4000;
+  margin: 0;
+}
+
+.store-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #d2b48c;
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.store-header nav {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+/*  */
+
+.store-header nav a.aaa {
+    text-decoration: none;
+    color: #8b4000;
+    font-weight: bold;
+    font-size: 1.7rem;
+}
+
+.cart-icon {
+    width: 2.2rem;
+    height: auto;
+    vertical-align: middle;
+}
+
+.filter-bar {
+    text-align: center;
+    margin: 1.5rem 0;
+}
+
+.filter-bar button {
+    background-color: #f4e1d2;
+    border: none;
+    border-radius: 20px;
+    padding: 0.5rem 1rem;
+    margin: 0.2rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-bar button:hover {
+    background-color: #deb887;
+}
+
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.product-card {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    background-image: url('./img/香菇圖標.png');
+    background-position: -10px -10px; 
+    background-size: 700px; 
+    padding: 1rem;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+.product-card img {
+    width: 100%;
+    border-radius: 12px;
+    height: 180px;
+    object-fit: cover;
+}
+
+.product-card h3 {
+    margin: 0.8rem 0 0.5rem;
+    font-size: 1.2rem;
+}
+
+.product-card p {
+    margin: 0.5rem 0;
+}
+
+.product-card button {
+    background-color: #8b4513;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.product-card button:hover {
+    background-color: #a0522d;
+}
+
+.site-footer {
+    background-color: #d2b48c;
+    text-align: center;
+    padding: 1rem;
+    font-size: 1rem;
+    color: #4b2e0f;
+}
+
+/* 購物車數字徽章 */
+.cart-wrapper {
+    position: relative; /* ✅ 為了讓徽章定位在這個容器的右上角 */
+    display: inline-block;
+  }
+  
+  .cart-badge {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: red;
+    color: white;
+    font-size: 0.7rem;
+    font-weight: bold;
+    padding: 2px 6px;
+    border-radius: 50%;
+    display: none; /* 預設隱藏，JS 判斷後才顯示 */
+  }
+
+  @media (max-width: 768px) {
+    header.store-header {
+      padding: 0.5rem 1rem;
+    }
+  
+    .logo {
+      width: 6rem;
+    }
+  
+    .h1 {
+      font-size: 2rem;
+    }
+  
+    .store-header nav a.aaa {
+      font-size: 1.2rem;
+    }
+  
+    .cart-icon {
+      width: 1.8rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    header.store-header {
+      padding: 0.3rem 0.8rem;
+    }
+  
+    .logo {
+      width: 5rem;
+    }
+  
+    .h1 {
+      font-size: 1.5rem;
+    }
+  
+    .store-header nav a.aaa {
+      font-size: 1rem;
+    }
+  
+    .cart-icon {
+      width: 1.5rem;
+    }
+  }

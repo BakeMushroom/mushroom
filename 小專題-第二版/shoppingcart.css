@@ -1,0 +1,153 @@
+/* === 全站基礎設定 === */
+html {
+  font-size: 16px;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: 'Noto Sans TC', sans-serif;
+}
+
+body {
+  margin: 0;
+  background: #fffaf2;
+  font-size: 16px;
+  /* 使用 rem 實現響應式 */
+}
+
+header.store-header {
+  background-color: #d2b48c;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.bbb {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo {
+  display: block;
+  max-height: 80px;
+  height: auto;
+}
+
+.h1 {
+  font-size: 3rem;
+  color: #8b4000;
+  margin: 0;
+}
+
+nav a.aaa {
+  text-decoration: none;
+  color: #8b4000;
+  font-weight: bold;
+  font-size: 1.7rem;
+}
+
+.cart-icon {
+  width: 2.2rem;
+  height: auto;
+  vertical-align: middle;
+}
+
+.cart-wrapper {
+  position: relative;
+}
+
+.cart-badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: red;
+  color: white;
+  font-size: 0.8rem;
+  padding: 2px 6px;
+  border-radius: 50%;
+  display: none;
+}
+
+main.cart-aaaaa {
+  max-width: 900px;
+  margin: auto;
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 2rem;
+}
+
+th,
+td {
+  font-size: 1.2rem;
+  padding: 1rem;
+  border-bottom: 1px solid #ccc;
+  text-align: center;
+}
+
+.cart-ccccc {
+  text-align: right;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+button {
+  background-color: #8b4000;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  margin: 0.5rem;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #a0522d;
+}
+
+td button {
+  padding: 0.5rem 1rem;
+  margin: 0 0.25rem;
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  header.store-header {
+    padding: 0.5rem 1rem;
+  }
+
+  .logo {
+    width: 6rem;
+  }
+
+  .h1 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  header.store-header {
+    padding: 0.3rem 1rem;
+  }
+
+  .logo {
+    width: 5rem;
+  }
+
+  .h1 {
+    font-size: 1.5rem;
+  }
+}

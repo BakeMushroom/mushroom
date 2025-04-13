@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>香菇園區</title>
+    <link rel="stylesheet" href="./mushroom.css">
+    <link rel="icon" href="./img/香菇圖標.png">
+
+</head>
+
+<body>
+
+    <header class="aoa">
+        <div class="bbb">
+            <img src="img/mushroom-1.png" class="logo">
+            <!-- <h1 class="h1">菇</h1> -->
+        </div>
+
+        <nav>
+            <button class="aaa runaway-btn">香菇</button>
+            <a href="香菇賣場.html" class="aaa">賣場</a>
+            <button id="learnMoreBtn" class="aaa">了解更多</button>
+            <button class="ddd">會員登入</button>
+
+        </nav>
+    </header>
+    <section class="carousel">
+        <div class="carousel-wrapper">
+            <img src="img/輪播圖/產品.png" class="carousel-img active">
+            <img src="img/輪播圖/採摘.png" class="carousel-img">
+            <img src="./img/輪播圖/餅乾.png" class="carousel-img">
+            <img src="./img/美味佳餚-2.png" class="carousel-img">
+            <img src="./img/熱銷商品.png" class="carousel-img">
+
+
+            <button class="carousel-btn prev">&#10094;</button>
+            <button class="carousel-btn next">&#10095;</button>
+        </div>
+    </section>
+    <section class="features">
+        <div class="feature">
+            <img src="./img/home.png" alt="門市" class="icon">
+            <h3>實體門市</h3>
+            <p>台中門市可自取</p>
+        </div>
+        <div class="feature">
+            <img src="./img/truck-side.png" alt="免運" class="icon">
+            <h3>滿額免運</h3>
+            <p>消費滿3000享免運優惠</p>
+        </div>
+        <div class="feature">
+            <img src="./img/dollar.png" alt="線上付款" class="icon">
+            <h3>線上付款</h3>
+            <p>使用菇界線上刷卡付款</p>
+        </div>
+    </section>
+    <section class="card-section">
+        <div class="card">
+            <img src="./img/美味佳餚.png" alt="全新餐點">
+            <h3>全新餐點</h3>
+            <p>放山母雞、香菇海味宴，菇鮮雞鮮一次滿足，時蔬佳餚、山珍海味任君挑選</p>
+            <a href="#" class="card-link">查看菜單</a>
+        </div>
+        <div class="card">
+            <img src="./img/熱銷商品.png" alt="暢銷商品">
+            <h3>暢銷商品</h3>
+            <p>菇類餅乾、香菇牛肉ox醬、銀耳桂圓湯，美味健康</p>
+            <a href="香菇賣場.html" class="card-link">立即購買</a>
+        </div>
+        <div class="card">
+            <img src="./img/菇類圖鑑0906-02.jpeg" alt="菇類知識">
+            <h3>菇類知識</h3>
+            <p>了解更多菇類的知識與食用小技巧</p>
+            <a href="https://kmweb.moa.gov.tw/subject/index.php?id=131" class="card-link">閱讀文章</a>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <p>聯絡信箱 : mushroom@xxoo.com</p>
+            <p>服務電話 : 0912-XXX-345</p>
+            <p>© 2025 香菇．版權所有 🍄</p>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        // 香菇逃跑按鈕設定
+        document.addEventListener("DOMContentLoaded", () => {
+  const runawayBtn = document.querySelector(".runaway-btn");
+  let originalX = 0;
+  let originalY = 0;
+
+  // 限制範圍移動範圍
+  const maxDistanceX = 150;
+  const maxDistanceY = 80;
+
+  // 滑鼠移上時逃跑
+  runawayBtn.addEventListener("mouseenter", () => {
+    const x = Math.floor(Math.random() * maxDistanceX * 2) - maxDistanceX;
+    const y = Math.floor(Math.random() * maxDistanceY * 2) - maxDistanceY;
+    runawayBtn.style.transform = `translate(${x}px, ${y}px) rotate(${x}deg)`;
+  });
+
+  // 滑鼠離開時回來（可選）
+  runawayBtn.addEventListener("mouseleave", () => {
+    runawayBtn.style.transform = "translate(0, 0)";
+  });
+
+  // 點擊時彈出香菇彈窗
+  runawayBtn.addEventListener("click", () => {
+    Swal.fire({
+      title: "你成功抓到香菇🍄！",
+      text: "她那麼可愛，不要抓她!!",
+      icon: "success",
+      confirmButtonText: "放她一馬"
+    });
+  });
+});
+        // 了解更多按鈕設定
+        document.getElementById("learnMoreBtn").addEventListener("click", function () {
+            Swal.fire({
+                title: "關於香菇園區",
+                text: "我們致力於推廣台灣本土自然種植、健康美味、有機天然的菇類農作物及相關產品！",
+                icon: "info",
+                confirmButtonText: "返回",
+                confirmButtonColor: "#8b4000"
+            });
+        });
+
+        document.querySelector(".ddd").addEventListener('click', () => {
+            Swal.fire({
+                title: '🍂 請確認權限！🍄',//主標題文字
+                text: '騙你的啦嘿嘿，快來登入🎉',//內文說明文
+                icon: 'warning',//提示圖示
+                confirmButtonText: '立即前往',//按鈕文字
+                confirmButtonColor: '#8b4000'//按鈕顏色
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = "會員登入.html";
+                }
+            });
+        });
+
+        // 輪播圖樣式互動
+        const images = document.querySelectorAll('.carousel-img');
+        let index = 0;
+
+        function showSlide(i) {
+            images.forEach(img => img.classList.remove('active'));
+            images[i].classList.add('active');
+        }
+
+        document.querySelector('.carousel-btn.prev').addEventListener('click', () => {
+            index = (index - 1 + images.length) % images.length;
+            showSlide(index);
+        });
+
+        document.querySelector('.carousel-btn.next').addEventListener('click', () => {
+            index = (index + 1) % images.length;
+            showSlide(index);
+        });
+
+        setInterval(() => {
+            index = (index + 1) % images.length;
+            showSlide(index);
+        }, 4000);
+    </script>
+
+    </script>
+
+</body>
+
+</html>
