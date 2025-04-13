@@ -61,7 +61,7 @@
             <img src="./img/美味佳餚.png" alt="全新餐點">
             <h3>全新餐點</h3>
             <p>放山母雞、香菇海味宴，菇鮮雞鮮一次滿足，時蔬佳餚、山珍海味任君挑選</p>
-            <a href="#" class="card-link">查看菜單</a>
+            <a href="#" class="card-link" id="menuBtn">查看菜單</a>
         </div>
         <div class="card">
             <img src="./img/熱銷商品.png" alt="暢銷商品">
@@ -88,36 +88,36 @@
     <script>
         // 香菇逃跑按鈕設定
         document.addEventListener("DOMContentLoaded", () => {
-  const runawayBtn = document.querySelector(".runaway-btn");
-  let originalX = 0;
-  let originalY = 0;
+            const runawayBtn = document.querySelector(".runaway-btn");
+            let originalX = 0;
+            let originalY = 0;
 
-  // 限制範圍移動範圍
-  const maxDistanceX = 150;
-  const maxDistanceY = 80;
+            // 限制範圍移動範圍
+            const maxDistanceX = 150;
+            const maxDistanceY = 80;
 
-  // 滑鼠移上時逃跑
-  runawayBtn.addEventListener("mouseenter", () => {
-    const x = Math.floor(Math.random() * maxDistanceX * 2) - maxDistanceX;
-    const y = Math.floor(Math.random() * maxDistanceY * 2) - maxDistanceY;
-    runawayBtn.style.transform = `translate(${x}px, ${y}px) rotate(${x}deg)`;
-  });
+            // 滑鼠移上時逃跑
+            runawayBtn.addEventListener("mouseenter", () => {
+                const x = Math.floor(Math.random() * maxDistanceX * 2) - maxDistanceX;
+                const y = Math.floor(Math.random() * maxDistanceY * 2) - maxDistanceY;
+                runawayBtn.style.transform = `translate(${x}px, ${y}px) rotate(${x}deg)`;
+            });
 
-  // 滑鼠離開時回來（可選）
-  runawayBtn.addEventListener("mouseleave", () => {
-    runawayBtn.style.transform = "translate(0, 0)";
-  });
+            // 滑鼠離開時回來（可選）
+            runawayBtn.addEventListener("mouseleave", () => {
+                runawayBtn.style.transform = "translate(0, 0)";
+            });
 
-  // 點擊時彈出香菇彈窗
-  runawayBtn.addEventListener("click", () => {
-    Swal.fire({
-      title: "你成功抓到香菇🍄！",
-      text: "她那麼可愛，不要抓她!!",
-      icon: "success",
-      confirmButtonText: "放她一馬"
-    });
-  });
-});
+            // 點擊時彈出香菇彈窗
+            runawayBtn.addEventListener("click", () => {
+                Swal.fire({
+                    title: "你成功抓到香菇🍄！",
+                    text: "她那麼可愛，不要抓她!!",
+                    icon: "success",
+                    confirmButtonText: "放她一馬"
+                });
+            });
+        });
         // 了解更多按鈕設定
         document.getElementById("learnMoreBtn").addEventListener("click", function () {
             Swal.fire({
@@ -140,6 +140,19 @@
                 if (result.isConfirmed) {
                     window.location.href = "會員登入.html";
                 }
+            });
+        });
+        // 菜單系統還沒上線的sweetalert2彈窗提示
+        document.getElementById("menuBtn").addEventListener("click", function (e) {
+            e.preventDefault(); // 防止跳轉
+
+            Swal.fire({
+                title: "嫩菇野時蔬大餐上桌！",
+                text: "菜單調整中，造成不便敬請見諒",
+                imageUrl: "./img/美味佳餚.png", // 這張圖會當作彈窗圖片顯示
+                imageWidth: 300,
+                imageHeight: 250,
+                confirmButtonText: "離開"
             });
         });
 
